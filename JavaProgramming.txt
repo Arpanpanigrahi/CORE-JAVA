@@ -1,0 +1,368 @@
+JAVA PROGRAMMING SHORT NOTES
+=================================================================================================================================================
+V1. Features of OOP
+
+1>Data Abstraction ==> Hiding data
+2>Encapsulation ==> Groping of data member within a single unit
+3>Inheritance ==> Existing property is being used in new property
+4>Polymorphism ==> Many + Forms  == One single object will behave differently at different instsant of time
+				1> Compile-time polymorphism
+				2> Run-time polymorphism
+5>Class
+6>Object
+
+
+V2. Installation & Path setting Java
+
+Open Google(Type jdk for windows-10 62-bit) -> downloadf -> install
+C:\Program Files\Java\jdk-14\bin ==> Copy this and paste it
+Mycomputer -> properties -> advanced system setting -> Environment variables -> path -> edit -> new -> paste -> ok
+
+
+V3. Compile & Execution first java program
+
+Open Notepad++
+Go to language and select J -> Java
+Start writing program
+Save the file with class name where main method belongs to
+Give the extension .java
+File -> Go to containg folder -> cmd
+Check java has been installed or not (if not installed then message will come "javac" is not recognized as internal or external command)
+For compilation type ==> javac filename.java
+For execution type ==> java filename
+
+Q> Why main() is public?
+Any method or variable which is declared as public in Java, can be accessible from outside of that class.
+Since the main method is public in Java, JVM can easily access and executes it.
+
+Q> What will happen if the main() is not public in Java?
+It will be compiled successfully but will not be executed. JVM throws NoSuchMethodException:main as it does not find the main method due to not public using predefined signature 
+in class which is provided to java command.
+
+Q> Why is main() is static?
+Object is required to call any method in OOP.
+Since the main method is static, Java virtual Machine can call it without creating any object of the class which contains the main method.
+
+===================================================
+Because object is created after entering to main().
+===================================================
+
+* Use of void
+void is a data type in programming language.
+Like C and C++ execution starts from main(), in Java, JVM calls main() to start the executionbut did not expect any value in return. So void.
+
+* Use of String args[]
+Java command line arguments are being stored in the form of String arguments through an array.
+Here, the name of the String array is args but it is not fixed and user can replace with any other name.
+
+* System.out.println()
+It is used to print the values which is given to it.
+System ==> Class name
+out ==> Instance
+println ==> method
+
+
+V4. JVM Architecture (Heart of entire Java Program execution process)
+
+Source Code (.java file) => Compile (javac) => Byte code (.class file) =>JVM 
+
+* Components of JVM Architecture
+
+
+V5. JVM vs JRE vs JDK
+
+1> JVM (Java Virtual Machine) ==> 
+		Loads the .class file or Byte Code
+		Verifies the correctness of Byte Code
+		Allocates memory in runtime area
+		Supports native programming
+		Faster execution
+
+2> JRE (Java Runtime Environment) ==> Set of library files + Other files
+		Implementation of JVM
+		Set of library files + Other files
+		Java Class loader is a part of JRE
+
+3> JDK (Java Development Kit) ==> 
+		Collection of tools used for developing java-based software
+		JRE + Development tools (Ex- javac, java)
+
+
+V6. Data types in Java
+
+1. Primitive DT (Numeric, Floating, Character, Boolean)
+2. Non PDT (String, Array)
+
+1> Byte (1 Byte = 8 bit)
+Keyword: byte
+Size: 1 Byte
+Range: -128 to 127
+Default value: 0
+Example: 
+		byte no = 65;
+		System.out.println(no);
+		
+2> Short
+Keyword: short
+Size: 2 Bytes
+Range: -32768 to 32767 (-2^15 to 2^15 - 1)
+Default value: 0
+Example: 
+		short no = 165;
+		System.out.println(no);
+		
+3> Integer
+Keyword: int
+Size: 4 Bytes
+Range: -2,147,483,648 to 2,147,483,648
+Default value: 0
+Example: 
+		int no = 32770;
+		System.out.println(no);
+		
+4> Long
+Keyword: long
+Size: 8 Bytes
+Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+Default value: 0
+Example: 
+		long no = 165L;
+		System.out.println(no);
+		
+5> Float
+Keyword: float
+Size: 4 Bytes
+Range: -3.4e38 to 3.4e38
+Default value: 0.0f
+Example: 
+		float no = 32.75f;
+		System.out.println(no);
+		
+6> Double
+Keyword: double
+Size: 8 Bytes
+Range: -1.8e308 to 1.8e308
+Default value: 0.0
+Example: 
+		double no = 65.8;
+		System.out.println(no);
+		
+7> Character
+Keyword: char
+Size: 2 Bytes
+Range: 0 to 65535
+Default value: \u0000
+Example: 
+		char ch = 'S';
+		System.out.println(ch);
+		
+8> Boolean
+Keyword: boolean
+Size: 1 bit
+Range: true / false
+Default value: false
+Example: 
+		boolean no = true;
+		System.out.println(no);
+
+
+V7. User Input Using Scanner Class in Java
+
+Scanner:- Class used for obtaining the input of the primitive types
+
+sc:- Name of the object of Scanner class
+
+new:- Allocates memory in the heap area
+
+System.in:- It is passed as an argument in Scanner class which tells the java compiler that system input will be provided through console(keyboard).
+
+
+V8. Arrays in Java
+Q> Why?
+Multiple values of similar type are stored in one variable.
+
+Q> What?
+1. Collection of similar type of elements which has contiguous memory location.
+2. Follows index-based, the first element of the array is stored at the 0th index, 2nd element is stored on the 1st index and so on.
+
+* Types of Array in Java:
+1. Single Dimensional array: Declaration (int arr[];) => Instantiation (arr = new int[5];) => Initalization (arr[2] =25)
+2. Multi-dimensional array
+
+
+V9. Class and Object in Java
+
+* Class:
+1> User defined prototype/template/blueprint/model.
+2> Represents the set of properties or methods that are common to all.
+3> Class declaration consists of name, variables, methods and their body.
+4> Logical entity.
+
+* Object:
+1> Created from a class or result of a class.
+2> Objects have states, behaviours and identity.
+3> Physical entity. 
+
+
+* Array of Objects
+
+Class Name object[] = new Class Name[size];
+	int index;
+	for(index=0;index<size;index++)
+	{
+		object[index] = new ClassName();
+	}
+
+
+V10. Constructors in Java
+* It is method whose name must be same as the class name it belongs to.
+* A Constructor must have no return type neither void.
+* Object is not required to call a constructor.
+
+#OBJECTIVE:
+* Used to initialize the object.
+* It constructs the values at the time of object creation.
+* Every time an object is created using the new() keyword, at least one constructor is called.
+
+#2-TYPES IN JAVA:
+1> Default Constructor / constructor with no argument
+Syntax: class_name() {   }
+		* If there is no constructor in a class, compiler automatically creates a default constructor.
+		* Used to provide the default values to the object.
+
+2> Parameterized Constructor / constructor with argument
+Syntax: class_name(argument1,argument2,---) {}
+		* Uses specific number of parameters.
+		* Used to provide different values to distinct objects.
+
+# Constructor Overloading:
+1> Having more than one constructor with different parameter lists.
+2> Each constructor performs a different task.
+		* Achieves Polymorphism through this.
+
+
+# Copy Constructor:
+1> No copy constructor in Java.
+2> Can copy the values from one object to another.
+3> During Construction of new object assigning the values of existing object.
+
+
+V11. Different Types of Variables in Java
+
+# Variable:
+1> Name of memory location.
+2> Variable is assigned with a data type.
+3> Have the value while the Java Program is executed.
+4> Its value can be changed.
+
+# Local variable
+Declared inside the body of the method.
+Can be used only within the method it is declared.
+Not visible to other methods in the class regarding existence of local variable.
+
+# Instance variable
+Declared inside the class but outside the method.
+Value is object specific.
+Not accessed among other object.
+
+# Static variable
+Declared inside the class but outside the method using static keyword.
+Cannot be declared as local.
+A single copy is created and shared by all objects of the class.
+Memory allocation for static variable done only once as it belongs to class not object.
+
+Example:
+
+class DemoVariable
+{
+	int number = 15; //instance variable
+	static int value = 10; //static variable
+	void fun()
+	{
+		int no = 60; //local variable
+	}
+}//End of class
+
+
+V12. Features of Java
+1> Simple => Bcoz Syntax is based on C++.
+		    Removed many complicated features like pointer, operator overloading, etc.
+
+2> Platform Independent => Java source code is compiled by the compiler and converted into bytecode.
+					    Bytecode is platform-independent code bcoz it can run on multiple platforms, 
+					    which follows WORA (Write Once Run Anywhere) principle.
+
+3> Robust => Strong (bcoz it uses memory management mechanism)
+
+4> Portable
+5> High performance
+6> Multi-threaded (allows many tasks to execute at once)
+7> Secured
+  
+V13. static Keyword in Java
+#Why?
+Used for memory management
+Belongs to the class rather object of that class
+Member declared as static can be accessed before the objects of its class are created
+Can be accessed without any object
+
+Syntax: static Datatype variablename = value;
+
+
+V14. this Keyword in Java
+used to refer current class instance variable.
+
+
+V15. Inheritance in Java
+One class gets all the properties and behaviours of a another class.
+Ex- Parent-child relationship.
+
+#Types:
+1> Single Inheritance
+2> Multilevel Inheritance
+3> Hierarchial Inheritance
+
+V16. super Keyword in Java
+#Why super?
+It is a reference variable.
+Used to refer immediate parent class object.
+While creating object of subclass, an object of parent class is created implicitly which is referred by super reference variable.
+
+#Usage of super Keyword
+Used to refer immediate parent class instance variable.
+Used to call immediate parent class method.
+Used to invoke immediate parent class constructor.
+
+V17. final Keyword in Java
+Cannot be overidden by subclass.
+Content of final method should not be changed.
+
+#Why final?
+Used to put restriction for the user.
+Used for finalizing implementation.
+
+========================================================
+Demo.java
+Example_1.java
+Example_2.java
+Example _3.java
+Example_4.java
+Example_5.java
+Example_6.java
+Example_7.java
+Example_8.java
+Loops_9.java
+Do_While_Loop.java
+Fibonacci_Series.java
+For_Loop.java
+Factorial.java
+Nested_For.java
+Array_in_Java.java
+Class_and_Obj_Example.java
+Inheritance.java
+Abstraction.java
+Example_Abstract_Class.java
+Interface_Example.java
+Exception_Handling.java
+Throw_Example.java
+File_Example_1.java
